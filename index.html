@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<title>Formularz ankiety</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background-color: rgba(255, 142, 29, 0.3);
+	font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  fieldset {
+    background-color: rgba(255, 142, 129, 0.3);
+	border: none;
+	margin: 50px;
+	padding: 40px;
+	max-width: 400px;
+  }
+  
+  fieldset:hover {
+    background-color: rgba(255, 142, 229, 0.3);  
+  }
+  
+  input, select {
+	border-radius: 5px;
+	border-width: 1px;
+	padding: 5px;
+  }
+  
+  input[type="text"] {
+	width: 200px;
+	transition: width 0.5s;
+  }
+
+  input:focus[type="text"] {
+	width: 300px;
+  }
+  
+  h2, p {
+	margin-left: 50px;
+  }
+  
+</style>
+</head>
+
+<body>
+
+<h2>Jak dojeżdżam do pracy?</h2>
+
+<form name="ankieta" method="post" action="receiver.php">
+
+	<fieldset>
+		<legend>Z jakich środków <span style="color:red;">transportu</span> korzystasz dojeżdżając do pracy?</legend>
+
+		<input type="checkbox" id="p1-autobus" name="p1[]" value="autobus">
+		<label for="p1-autobus">autobus</label><br>
+
+		<input type="checkbox" id="p1-tramwaj" name="p1[]" value="tramwaj">
+		<label for="p1-tramwaj">tramwaj</label><br>
+
+		<input type="checkbox" id="p1-pociag" name="p1[]" value="pociag">
+		<label for="p1-pociag">pociąg</label><br>
+
+		<input type="checkbox" id="p1-samochod" name="p1[]" value="samochod">
+		<label for="p1-samochod">samochód</label><br>
+
+		<input type="checkbox" id="p1-rower" name="p1[]" value="rower">
+		<label for="p1-rower">rower</label><br>
+
+		<input type="checkbox" id="p1-pieszo" name="p1[]" value="pieszo">
+		<label for="p1-pieszo">pieszo</label><br>
+	</fieldset>
+
+	<fieldset>
+		<legend>Ile czasu zajmuje ci dojazd od pracy?</legend>
+		
+		<input type="radio" id="p2-1" name="p2" value="1">
+		<label for="p2-1">mniej niż 10 minut</label><br>
+
+		<input type="radio" id="p2-2" name="p2" value="2">
+		<label for="p2-2">więcej niż 10 minut, a mniej niż 30 minut</label><br>
+
+		<input type="radio" id="p2-3" name="p2" value="3">
+		<label for="p2-3">więcej niż 30 minut, a mniej niż 1 godzinę</label><br>
+
+		<input type="radio" id="p2-4" name="p2" value="4">
+		<label for="p2-4">więcej niż 1 godzinę, a mniej niż 2 godziny</label><br>
+
+		<input type="radio" id="p2-5" name="p2" value="5">
+		<label for="p2-5">więcej niż 2 godziny</label><br>
+	</fieldset>
+
+<p>
+<label for="p3">Jaka odległość dzieli Cię od pracy? (podaj odpowiedź w kilometrach):</label>
+<input type="number" id="p3" name="p3" min="0" max="40000" step="0.1" value="0.0">
+</p>
+
+
+<p>
+<label for="p4">Podaj miejsce zamieszkania:</label>
+<input type="text" id="p4" name="p4"><br>
+</p>
+
+<p>
+<label for="p5">Na co zwracasz największę uwagę wybierając środek komunikacji?</label>
+<select name="p5" id="p5">
+	<option value=""></option>
+	<option value="A">czas dojazdu</option>
+	<option value="B">koszt</option>
+	<option value="C">wygoda</option>
+	<option value="D">obecność/brak innych osób</option>
+	<option value="E">dostepność</option>
+</select>
+</p>
+
+<input type="submit" value="Zakończ!">
+</form>
+
+</body>
+</html>
